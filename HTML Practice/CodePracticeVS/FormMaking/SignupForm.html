@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signupform.css">
+</head>
+
+<body>
+
+    <center>
+        <table border="1" style="background-color: rgb(180, 216, 216);">
+            <h2><u>SignUp Form</u></h2>
+            <tr>
+
+                <th>FirstName</th>
+                <td><input type="text" id="firstName" onchange="showData()"></td>
+            </tr>
+            <tr>
+
+                <th>Last Name</th>
+                <td><input type="text" id="lastName" onchange="showData()"></td>
+            </tr>
+            <tr>
+
+                <th>Address</th>
+                <td><textarea id="address" onchange="showData()" rows="3" cols="20"></textarea> </td>
+            </tr>
+            <tr>
+
+                <th>Age</th>
+                <td><input type="text" id="age" onchange="showData()"></td>
+            </tr>
+
+            <tr>
+
+                <th>LoginId</th>
+                <td><input type="text" id="loginId" onchange="showData()"></td>
+            </tr>
+            <tr>
+
+                <th>Password</th>
+                <td><input type="password" id="password" onchange="showData()"></td>
+            </tr>
+            <tr>
+
+                <th></th>
+                <td><input type="submit"></td>
+                </td>
+            </tr>
+        </table>
+
+
+        <!-- git config --global user.name "himanshujain-adt"
+        git config --global user.email "himanshujain.adt@gmail.com" -->
+        <script>
+            function showData() {
+                var firstName = document.getElementById("firstName").value;
+                document.getElementById("get1").innerHTML = firstName;
+
+                var lastName = document.getElementById("lastName").value;
+                document.getElementById("get2").innerHTML = lastName;
+
+                var address = document.getElementById("address").value;
+                document.getElementById("get3").innerHTML = address;
+
+                var age = document.getElementById("age").value;
+                document.getElementById("get4").innerHTML = age;
+
+                var loginId = document.getElementById("loginId").value;
+                document.getElementById("get5").innerHTML = loginId;
+
+                var password = document.getElementById("password").value;
+                document.getElementById("get6").innerHTML = password;
+
+
+            }
+
+        </script>
+        <h2 id="get1"></h2>
+        <h2 id="get2"></h2>
+        <h2 id="get3"></h2>
+        <h2 id="get4"></h2>
+        <h2 id="get5"></h2>
+        <h2 id="get6"></h2>
+        <h1><input type="text" id="get1"></h1>
+    </center>
+
+</body>
+
+</html>

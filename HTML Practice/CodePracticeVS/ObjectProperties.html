@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="demo"></h2>
+    <h2 id="demo2"></h2>
+    <script>
+        const person = {
+            firstName: "Himanshu",
+            lastName: "Jain",
+            age: "32",
+            address: "Indore"
+        };
+        document.getElementById("demo").innerHTML = "firstname & lastname : " + person.firstName + " "
+            + person.lastName;
+
+        value = delete person.address;
+        document.getElementById("demo2").innerHTML = person.firstName + "address is deleted: " + person.address + " value:=>>" + value;
+    </script>
+</body>
+
+</html>

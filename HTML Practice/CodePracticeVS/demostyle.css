@@ -1,0 +1,11 @@
+body {
+
+    /* background-color: lightblue; */
+    background-image: url("images/nature.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    padding-top: 50px;
+}

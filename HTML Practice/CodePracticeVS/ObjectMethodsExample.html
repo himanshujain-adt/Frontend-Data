@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="demo"></h2>
+    <h1 id="display"></h1>
+    <script>
+        // object is create
+        const person = {
+            firstName: "Himanshu",
+            lastName: "Jain",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        // object is create
+        document.getElementById("demo").innerHTML = person.firstName;
+        // for(let i=0;i<3;i++){
+        // document.getElementById("display").innerHTML = person[i];
+        // }
+    </script>
+</body>
+
+</html>

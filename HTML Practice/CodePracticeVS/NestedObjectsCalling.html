@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Nested Object Calling...</h1>
+    <h2 id="demo"></h2>
+    <script>
+        const myObject = {
+            name: "Himanshu Jain",
+            age: "32",
+            myCars: {
+                car1: "BMW",
+                car2: "MARUTI",
+                car3: "AUDI"
+            }
+        }
+        // document.getElementById("demo").innerHTML = myObject.myCars.car3;
+        // let p1 = "myCars";
+        // let p2 = "car2";
+        document.getElementById("demo").innerHTML = myObject.myCars.car1;
+        //document.getElementById("demo").innerHTML = myObj[p1][p2];
+
+    </script>
+</body>
+
+</html>
