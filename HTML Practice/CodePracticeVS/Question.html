@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: rgb(143, 163, 230);">
+    <center>
+        <h1 id="test1"></h1>
+        <!-- <textarea rows="10" cols="100" id="ques" style="background-color: aqua;"></textarea> -->
+        <h1 id="test2"></h1>
+        <input type="text" id="answer">
+        <h2 id="print"></h2>
+
+        <h3 id="demo"></h3>
+
+
+        <script>
+
+            const quiz = [{ question: "What is the capital of France?", correctAnswer: "Paris" },
+            { question: "Is JavaScript a programming language? (yes/no)", correctAnswer: "yes" },
+            { question: "What is 5 + 3?", correctAnswer: "8" },
+            { question: "Is Earth the third planet from the Sun? (yes/no)", correctAnswer: "yes" },
+            { question: "What color is the sky on a clear day?", correctAnswer: "blue" },
+            { question: "Is 10 greater than 15? (yes/no)", correctAnswer: "no" },
+            { question: "What is the opposite of 'up'?", correctAnswer: "down" },
+            { question: "Is water a solid at room temperature? (yes/no)", correctAnswer: "no" },
+            { question: "Which planet is known as the Red Planet?", correctAnswer: "Mars" },
+            { question: "How many legs does a spider have?", correctAnswer: "8" }
+            ]
+
+            result = "";
+            let i = 0;
+            check();
+            function check() {
+
+
+                document.getElementById("test1").innerHTML = " " + " Question " + (i + 1) + ". " + quiz[i].question;
+            }
+            function next() {
+                answer = document.getElementById("answer").value;
+                document.getElementById("demo").innerHTML = "your answer is :" + answer;
+                if (answer.toLowerCase() === quiz[i].correctAnswer.toLocaleLowerCase()) {
+                    document.getElementById("print").innerHTML = "Answer is Correct";
+                }
+                else {
+                    document.getElementById("print").innerHTML = "Answer is Incorrect";
+                }
+                i++;
+            }
+
+
+
+        </script>
+        <button type="submit" onclick="next()">Check Answer</button>
+        <button type="submit" onclick="check()">Next Question</button>
+    </center>
+</body>
+
+</html>

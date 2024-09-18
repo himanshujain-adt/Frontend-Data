@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Each Method </title>
+</head>
+
+<body>
+    <h1 id="demo"></h1>
+    <script>
+        const numbers = [45, 4, 5, 7, 8, 10];
+        let txt = "";
+        numbers.forEach(myFunction);
+        document.getElementById("demo").innerHTML = txt;
+        function myFunction(value, array) {
+
+            txt = txt + value + "<br>"
+        }
+    </script>
+</body>
+
+</html>
