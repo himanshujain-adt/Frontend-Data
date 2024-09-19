@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1 id="print"></h1>
+
+<body>
+    <script>
+        function test() {
+            return 1 + 2;
+        }
+        function hello(x) {
+            function add() {
+                return "HOFs high order function";
+            }
+            return add() + " " + x;
+        }
+
+        document.getElementById("print").innerHTML = test();
+        document.getElementById("print").innerHTML = hello("I am  ALPHADOT Technologies");
+
+    </script>
+</body>
+
+</html>

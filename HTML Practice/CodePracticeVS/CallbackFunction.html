@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>Students List</h1>
+<ul id="students"></ul>
+
+<body>
+    <script>
+        const students = [{ name: "Himanshu Jain", subject: "Javascript" },
+        { name: "Amit Bansal", subject: "Java" }]
+        function enrollStudent(student, callback) {
+            setTimeout(function () {
+                students.push(student);
+                console.log("Students has been enrolled");
+                callback();
+            }, 2000);
+        }
+        function getStudents() {
+            setTimeout(function () {
+                let str = "";
+                students.forEach(function (student) {
+                    str += `<li> ${student.name} </li>`;
+                    console.log("Students have been fetched");
+
+                })
+                document.getElementById("students").innerHTML = str;
+
+            }, 3000);
+        }
+        let newStudent = { name: "Sunny", subject: "React " }
+        enrollStudent(newStudent, getStudents);
+        //getStudents();
+    </script>
+</body>
+
+</html>

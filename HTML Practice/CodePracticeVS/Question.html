@@ -18,7 +18,7 @@
         <h3 id="demo"></h3>
 
 
-        <script>
+        <script> 
 
             const quiz = [{ question: "What is the capital of France?", correctAnswer: "Paris" },
             { question: "Is JavaScript a programming language? (yes/no)", correctAnswer: "yes" },
@@ -32,15 +32,16 @@
             { question: "How many legs does a spider have?", correctAnswer: "8" }
             ]
 
-            result = "";
+
             let i = 0;
-            check();
-            function check() {
+            next();
+            function next() {
 
 
                 document.getElementById("test1").innerHTML = " " + " Question " + (i + 1) + ". " + quiz[i].question;
             }
-            function next() {
+            function check() {
+
                 answer = document.getElementById("answer").value;
                 document.getElementById("demo").innerHTML = "your answer is :" + answer;
                 if (answer.toLowerCase() === quiz[i].correctAnswer.toLocaleLowerCase()) {
@@ -50,13 +51,14 @@
                     document.getElementById("print").innerHTML = "Answer is Incorrect";
                 }
                 i++;
+
             }
 
 
 
         </script>
-        <button type="submit" onclick="next()">Check Answer</button>
-        <button type="submit" onclick="check()">Next Question</button>
+        <button type="submit" onclick="check()">Check Answer</button>
+        <button type="submit" onclick="next()">Next Question</button>
     </center>
 </body>
 
