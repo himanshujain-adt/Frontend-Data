@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signupform.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <form>
+            <table border="1" style="background-color: rgb(180, 216, 216);">
+                <h2><u>Quiz Detais Form</u></h2>
+                <tr>
+
+                    <th>FirstName</th>
+                    <td><input type="text" id="firstName" onchange="showData()"></td>
+                </tr>
+                <tr>
+
+                    <th>Last Name</th>
+                    <td><input type="text" id="lastName" onchange="showData()"></td>
+                </tr>
+                <tr>
+
+                    <th></th>
+                    <td><input type="submit"></td>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+
+
+        <script>
+            function showData() {
+                var firstName = document.getElementById("firstName").value;
+                document.getElementById("get1").innerHTML = firstName;
+
+                var lastName = document.getElementById("lastName").value;
+                document.getElementById("get2").innerHTML = lastName;
+            }
+
+        </script>
+
+    </center>
+
+</body>
+
+</html>

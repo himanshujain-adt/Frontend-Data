@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #divPad {
+            padding-top: 2%;
+        }
+
+        label {
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .bottom-right-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #1680f1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <center>
+        <h2 id="startQuiz" style="color: blue;"><u>Quiz Start</u></h2>
+        <h1 id="prepareSheet"></h1>
+        <!-- <button onclick="showAllAnswers()">Print Report</button> -->
+
+        <button id="printButton" class="bottom-right-button" type="button" disabled>Print Report</button>
+        <h1 id="sheetPreaper" onclick=""></h1>
+        <div id="divPad" style="color: rgb(10, 31, 223);">
+            <h1 id="test1"></h1>
+
+            <form id="quizForm">
+                <div style="background-color: rgb(149, 221, 197);">
+                    <input type="radio" id="option1" name="capital" value="option1">
+                    <label id="lbl1" for="option1"></label>
+                    <input type="radio" id="option2" name="capital" value="option2">
+                    <label id="lbl2" for="option2"></label>
+
+                </div>
+            </form>
+
+            <br><br>
+            <h3 id="result"></h3>
+            <button id="btnCheck" onclick="getCheckAnswer()">Check Answer</button>
+            <button id="btnNext" onclick="nextQuestion()">Next Answer</button>
+        </div>
+    </center>
+
+    <!-- Section to show all questions and answers after the quiz -->
+    <div id="allAnswers" style="display: none; margin-top: 20px;">
+        <h2>Quiz Results</h2>
+        <div id="resultsContainer"></div>
+    </div>
+
+    <script src="questionanswer.js"></script>
+
+
+
+
+</body>
+
+</html>
