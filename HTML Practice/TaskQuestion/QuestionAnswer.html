@@ -31,9 +31,38 @@
 </head>
 
 <body>
+    <h2 id="welcome-message"></h2>
+
+
+    <div style="color: rgb(26, 209, 10);  font-size: 20px;">
+        <h2>
+
+            <div id="marks" style="color: rgb(26, 209, 10);">
+
+            </div>
+            Marks obtained out of
+            <h1 id="outMarks"></h1>
+
+
+        </h2>
+    </div>
+    
+
+
+    <script>
+        const firstName = localStorage.getItem("firstName");
+        const lastName = localStorage.getItem("lastName");
+        const fullName = firstName + " " + lastName;
+        if (fullName) {
+            document.getElementById('welcome-message').innerHTML = `Welcome, <b><u>${fullName}</u></b>`;
+        } else {
+            document.getElementById('welcome-message').innerHTML = `Welcome,Guest <b></b>`
+        }
+    </script>
 
     <center>
-        <h2 id="startQuiz" style="color: blue;"><u>Quiz Start</u></h2>
+        <!-- <h3 id="marks">Marks is: </h3> -->
+        <h2 id="startQuiz" style="color: blue;"><u>Quiz Started</u></h2>
         <h1 id="prepareSheet"></h1>
         <!-- <button onclick="showAllAnswers()">Print Report</button> -->
 
@@ -44,6 +73,7 @@
 
             <form id="quizForm">
                 <div style="background-color: rgb(149, 221, 197);">
+                    Select a Answer
                     <input type="radio" id="option1" name="capital" value="option1">
                     <label id="lbl1" for="option1"></label>
                     <input type="radio" id="option2" name="capital" value="option2">

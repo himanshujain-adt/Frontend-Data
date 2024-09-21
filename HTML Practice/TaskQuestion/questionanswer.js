@@ -11,7 +11,7 @@ const quiz = [{ question: "What is the capital of France?", correctAnswer: "Pari
 ]
 let i = 0;
 let userAnswers = [];
-window.onload = nextQuestion;
+window.onload = nextQuestion();
 function nextQuestion() {
 
     if (i >= quiz.length) {
@@ -19,18 +19,12 @@ function nextQuestion() {
         document.getElementById("quizForm").style.display = "none";
         document.getElementById("btnCheck").style.display = "none";
         document.getElementById("btnNext").style.display = "none";
+        document.getElementById("startQuiz").style.display = "none";
         document.getElementById("test1").innerText = "Quiz Completed!";
         document.getElementById("result").innerText = "";
         showAllAnswers();
 
-        // document.getElementById("prepareSheet").innerText = "Wait your answer sheet is preparing..."
-        // document.getElementById("prepareSheet").style.color = "blue";
-        // setTimeout(() => {
 
-
-
-        // }, 5000);
-        // document.getElementById("prepareSheet").innerText = "";
         return;
     }
     document.getElementById("result").innerText = "";
@@ -43,20 +37,23 @@ function nextQuestion() {
 
 
 }
-
+let count=0;
 function getCheckAnswer() {
 
 
     const correctValue = quiz[i].correctAnswer;
     const selectedRadio = document.querySelector('input[name="capital"]:checked');
+    console.log("select radio value===>>>>>" + selectedRadio.value);
 
     if (selectedRadio) {
         const selectedValue = document.querySelector(`label[for="${selectedRadio.id}"]`).innerText;
+
         userAnswers.push({ question: quiz[i].question, selectedAnswer: selectedValue, correctAnswer: correctValue });
 
         if (selectedValue === correctValue) {
             document.getElementById("result").innerText = "Correct Answer!";
             document.getElementById("result").style.color = "green";
+            count++;
         } else {
             document.getElementById("result").innerText = "Wrong Answer.";
             document.getElementById("result").style.color = "red";
@@ -68,16 +65,11 @@ function getCheckAnswer() {
         document.getElementById("result").style.color = "red";
     }
 }
+
 function showAllAnswers() {
     const resultsContainer = document.getElementById("resultsContainer");
     resultsContainer.innerHTML = ''; // Clear the container
 
-
-    //whwn i am trying to print report
-    // const report = `<div> 
-    // <button onclick="window.print()">Print Report</button>
-    // </div>`
-    // document.getElementById("printButton").innerHTML = report;
 
 
     //try code for print report
@@ -87,29 +79,35 @@ function showAllAnswers() {
     printButton.addEventListener("click", function () {
         window.print();
         printButton.disabled = true;
-        // document.getElementById("printButton").innerText="";
+        // setTimeout(() => {
+        //     localStorage.clear();
+        // }, 15000);
+
     });
     // Display each question, user's answer, and correct answer
 
-
+    //let j = 0;
     userAnswers.forEach((item, index) => {
-        const questionHTML = `
+
+        const questionHTML =
+            `
             <div>
                 <h3>Question ${index + 1}: ${item.question}</h3>
                 <p class="user-answer">Your answer: ${item.selectedAnswer}</p>
                 <p class="${item.selectedAnswer === item.correctAnswer ? 'correct' : 'wrong'}">
                     Correct answer: ${item.correctAnswer}
+                  
                 </p>
             </div>
               
         `;
         resultsContainer.innerHTML += questionHTML;
     });
-
-
+    
+document.getElementById("outMarks").innerHTML=quiz.length;
+    document.getElementById("marks").innerHTML =  count;
 
     // Show the results section
     document.getElementById("allAnswers").style.display = "block";
-    // ` <button onclick="window.print()">Print Report</button> `;
 }
 
