@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color:cornsilk" onload="getData()">
+    <center>
+        <h1> Edit Your Task Here </h1>
+        <BR>
+        <h2>Task
+            <input type="text" id="taskInputEdit">
+
+        </h2>
+        <br>
+        <label>Choose Status:</label>
+        <select id="statusEdit">
+            <option>Select Status</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+        <BR>
+        <BR>
+        <button type="submit" onclick="getTaskEdit()">Edit Task</button>
+       
+        <h2 id="taskEditMessage" style="color: green;"></h2>
+        <br><br>
+        <!-- <a href="Task2.html">Back </a> -->
+
+    </center>
+    <script>
+
+        function getData() {
+            taskDataEdit = localStorage.getItem("taskData");
+            console.log(taskDataEdit);
+            document.getElementById("taskInputEdit").value = taskDataEdit;
+            let statusDataEdit = localStorage.getItem("statusData");
+            document.getElementById("statusEdit").value = statusDataEdit;
+
+        }
+        function getTaskEdit() {
+            let tasInputEdit = document.getElementById("taskInputEdit").value;
+            let statusEdit = document.getElementById("statusEdit").value
+            console.log("edit button data get  ==>>>>" + tasInputEdit + " " + statusEdit);
+            alert("Are you sure to edit task");
+            document.getElementById("taskEditMessage").innerText = "Task Edited Successfully!!!";
+
+        }
+
+
+    </script>
+</body>
+
+</html>

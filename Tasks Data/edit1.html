@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+</head>
+
+<body style="background-color:cornsilk" onload="getData()">
+    <center>
+        <h1>Edit Your Task Here</h1>
+        <br>
+        <h2>
+            Task:
+            <input type="text" id="taskInputEdit">
+        </h2>
+        <br>
+        <label>Choose Status:</label>
+        <select id="statusEdit">
+            <option>Select Status</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+        <br><br>
+        <button type="submit" onclick="getOptionEdit()">Edit Task</button>
+        <h2 id="taskEditMessage" style="color: green;"></h2>
+    </center>
+
+    <script>
+        function getData() {
+            let taskDataEdit = localStorage.getItem("taskData");
+            console.log(taskDataEdit);
+            document.getElementById("taskInputEdit").value = taskDataEdit; // Use 'value' instead of 'innerHTML'
+        }
+
+        function getOptionEdit() {
+            let task = document.getElementById("taskInputEdit").value;
+            let status = document.getElementById("statusEdit").value;
+            if (status !== "Select Status") {
+                document.getElementById("taskEditMessage").textContent = `Task: ${task}, Status: ${status}`;
+            } else {
+                document.getElementById("taskEditMessage").textContent = 'Please select a valid status!';
+            }
+        }
+    </script>
+</body>
+
+</html>

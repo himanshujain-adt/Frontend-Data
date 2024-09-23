@@ -11,8 +11,8 @@
     <center>
         <h1> To - do list </h1>
         <BR>
-        <h2>Add Task Here
-            <input type="text" id="taskInput" placeholder=" Enter Your Task Here">
+        <h2>Add Task here
+            <input type="text" id="taskInput" placeholder=" Java Program">
 
         </h2>
         <br>
@@ -24,125 +24,49 @@
         </select>
         <BR>
         <BR>
-        <button type="submit" onclick="addTask()">Add Task</button>
+        <button type="submit" onclick="getOption()">Add Task</button>
         <h2 id="taskAddMessage" style="color: green;"></h2>
         <br><br>
-
         <h1>Task List</h1>
-        <input type="text" placeholder="search by status" id="searchStatus" style="display: none;"> <button
-            type="submit" id="search" onclick="search()">Search</button>
-        <br><br>
-        <table border="1" id="taskTable"
-            style="height: 30%;width: 30%; background-color: rgb(97, 242, 247); display: none;">
-
-
+        <table border="1">
             <tr>
                 <th>Number</th>
                 <th>Task Added</th>
                 <th>Status </th>
                 <th>Edit</th>
             </tr>
-
+            <tr>
+                <td id="n1"></td>
+                <td id="t1"></td>
+                <td id="o1"></td>
+              
+             
+            </tr>
         </table>
     </center>
     <script>
-        let tasks = [];
-        let statuses = [];
-        let count = 0;
-        function addTask() {
 
+        function getOption() {
+            i = 0;
             let taskData = document.getElementById("taskInput").value;
-            let statusData = document.getElementById("status").value;
-            if (taskData && statusData !== "Select Status") {
-                tasks.push(taskData);
-                statuses.push(statusData);
-                localStorage.setItem("statusData", statusData);
-                localStorage.setItem("taskData", taskData);
-                count++
-                document.getElementById("taskAddMessage").innerText = count + " " + "Task Added Successfully!!!!!!"
-                updateTaskList();
-                document.getElementById("taskInput").value = "";
-                document.getElementById("status").value = "Select Status";
-                setTimeout(() => {
-                    document.getElementById("taskAddMessage").style.display = "none"
-                }, 10000);
-            }
-            else {
-                alert("Please enter task  and choose valid status.")
+            console.log(taskData);
+            selectElement = document.querySelector('#status');
+            output = selectElement.value;
+            console.log(output);
+            if (taskData && output) {
+
+                document.getElementById("taskAddMessage").innerText = "Task & Status Added Successfully!!!!!";
+                document.getElementById("t1").innerText = taskData;
+                i++;
             }
 
+            document.getElementById("o1").innerText = output;
+            document.getElementById("n1").innerText = i;
+            setTimeout(() => {
+                document.getElementById("taskAddMessage").style.display = "none"
+            }, 20000);
         }
-        function updateTaskList() {
-            let taskTable = document.getElementById("taskTable");
-            let searchStatus = document.getElementById("searchStatus");
-            // taskTable.style.display="table";
-            if (tasks.length > 0) {
 
-                taskTable.style.display = "table";
-
-
-                taskTable.innerHTML = `
-                <tr>
-                    <th>Number</th>
-                    <th>Task Added</th>
-                    <th>Status</th>
-                    <th>Edit</th>
-                </tr>
-            `;
-                if (searchStatus.style.display === "none" || searchStatus.style.display === "") {
-                    searchStatus.style.display = "block";
-                }
-
-
-
-
-                for (let i = 0; i < tasks.length; i++) {
-                    let row = taskTable.insertRow();
-                    row.insertCell(0).innerText = i + 1;
-                    row.insertCell(1).innerText = tasks[i];
-                    row.insertCell(2).innerText = statuses[i];
-                    row.insertCell(3).innerHTML = '<a href="edit1.html">Edit</a>'
-                    console.log(tasks[i] + "  " + statuses[i]);
-
-                }
-            } else {
-                taskTable.style.display = "none";
-                searchStatus.style.display = "none";
-
-            }
-
-        }
-        function search() {
-            let searchStatus = document.getElementById("searchStatus").value.toLowerCase();
-            let taskTable = document.getElementById("taskTable");
-
-            taskTable.innerHTML = `
-                <tr>
-                    <th>Number</th>
-                    <th>Task Added</th>
-                    <th>Status</th>
-                    <th>Edit</th>
-                </tr>
-            `;
-
-            let count = 0;
-            for (let i = 0; i < tasks.length; i++) {
-                if (statuses[i].toLowerCase() === searchStatus || searchStatus === "") {
-                    let row = taskTable.insertRow();
-                    row.insertCell(0).innerText = count + 1;
-                    row.insertCell(1).innerText = tasks[i];
-                    row.insertCell(2).innerText = statuses[i];
-                    row.insertCell(3).innerHTML = '<a href="edit1.html">Edit</a>';
-                    count++;
-                }
-            }
-
-            if (count === 0) {
-                taskTable.style.display = "none";
-            } else {
-                taskTable.style.display = "table";
-            }
-        }
 
 
     </script>
