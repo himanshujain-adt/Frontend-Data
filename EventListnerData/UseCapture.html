@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="outerDiv" style="background-color: aqua;width: 50%;height: 50%;">
+        <h1>OuterDiv</h1>
+        <div id="innerDiv" style="width: 50%; height: 50%; background-color: chartreuse;">
+            <h1>Inner Div</h1>
+        </div>
+    </div>
+    <script>
+        document.querySelector("#innerDiv").addEventListener('click', function () {
+            alert("Inner Div Calling");
+        },true);
+        document.querySelector("#outerDiv").addEventListener('click', function () {
+            alert("Outer Div Calling");
+        },true);
+    </script>
+</body>
+
+</html>

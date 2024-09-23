@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function focousDemo() {
+            setTimeout(() => {
+                document.getElementById("myDemo").style.background = "yellow";
+            }, 5000);
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" onfocus="focousDemo()" id="myDemo">
+</body>
+
+</html>
