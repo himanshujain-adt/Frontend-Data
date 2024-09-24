@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var obj =
+            '{    "id":101,"name":"Himanshu jain","age":32}';
+       // document.write(obj);//we can print this but not obj.id so use parse()
+        var json_object = JSON.parse(obj);
+        document.write(json_object.name+"  "+json_object.id);
+    </script>
+</body>
+
+</html>

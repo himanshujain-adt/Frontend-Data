@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="learn" style="background-color: rgb(31, 216, 216);">Click To Learning Event Listner</h1>
+    <script>
+        document.getElementById("learn").addEventListener("click", abc);
+        function abc() {
+            document.getElementById("learn").style.background = "blue";
+        }
+
+        document.getElementById("learn").addEventListener("mouseout",function(){
+            this.style.border="10px solid red";
+        });
+    </script>
+</body>
+
+</html>

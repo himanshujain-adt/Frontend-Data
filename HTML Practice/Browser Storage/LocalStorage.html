@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Learnibg Session Storage</h1>
+    <h2 id="localDemo"></h2>
+
+    <script>
+        localStorage.setItem("id", 123);
+        localStorage.setItem("Car", "BMW");
+        localStorage.setItem("fruitsName", "Apple");
+        // let item = localStorage.getItem("fruitsName");
+        // console.log(item);
+        // console.log("length is: "+localStorage.length);
+        // //  document.querySelector('h2').innerHTML=localStorage.key[i];
+        // for (let i = 0; i < localStorage.length; i++) {
+       // let keys = "";
+        //     keys = keys + localStorage.key;
+
+        //     document.getElementById("localDemo").innerText = keys ;
+
+        //     console.log(keys);
+        // }
+        // // console.log(localStorage.key(1));
+        // keys = keys + localStorage.key(0);
+        // console.log(keys);
+        var keys="";
+        for(let i=0;i<localStorage.length;i++){
+           
+            keys=keys+localStorage.key(i)+"<br>";
+           
+        }
+       // alert(keys);
+       document.getElementById("localDemo").innerHTML=keys;
+    </script>
+</body>
+
+</html>

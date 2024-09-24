@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bulbOn() {
+            document.getElementById("myImage").src = "bulb_color.jpg";
+        }
+        function bulbOff() {
+            document.getElementById("myImage").src = "bulb.jpg";
+        }
+    </script>
+</head>
+
+<body>
+
+    <img src="bulb.jpg" id="myImage" onmousedown="bulbOn()" onmouseup="bulbOff()" style="width: 100; height: 180;" >
+</body>
+
+</html>
