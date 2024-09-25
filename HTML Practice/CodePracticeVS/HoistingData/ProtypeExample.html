@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let a = {
+            name: "Himanshu Jain",
+            address: "Dubai",
+            run:()=>{ 
+            let message="some message self run"
+            alert(message?message:"No Mesaage");
+            alert("run")
+        }
+        }     
+        console.log(a);
+      
+      let p={
+        run:()=>{ 
+            let message="some message"
+            alert(message?message:"No Mesaage");
+            alert("run")
+        }
+      }
+      p.__proto__={
+        id:123
+      }
+      a.__proto__= p;
+      a.run();
+    console.log(a.id);
+    </script>
+</body>
+
+</html>
