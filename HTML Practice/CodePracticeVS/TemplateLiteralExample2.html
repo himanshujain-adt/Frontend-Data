@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="demo"></h1>
+    <script>
+        let person = {
+            name: "Himanshu Jain",
+            email: "himanshujain.adt@gmail.com",
+            address: "Dubai",
+            DOB: "19-01-1992"
+        };
+        let valuesData="";
+
+    let i=0;
+        for (let x in person) {
+            
+
+             valuesData +=  "<br>"+`${x}:${i++} ${person[x]}`;
+            console.log(`${x}`+":"+person[x]);
+            document.getElementById("demo").innerHTML = valuesData;
+
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="test" style="background-color: aquamarine; height: 30%; width: 30%;" ></h1>
+    <script>
+     
+        const person = {
+            name: "Himanshu",
+            address: "Indore",
+            emailId: "himanshujain119@yaho.com",
+            password: "123"
+        };
+        let text = "";
+
+        for (let [key, value] of Object.entries(person)) { // Use Object.entries() for key-value pairs
+            text += `${key}: ${value}<br>`;
+        }
+
+        document.getElementById("test").innerHTML = text;
+    </script>
+</body>
+
+</html>
